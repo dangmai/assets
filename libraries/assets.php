@@ -70,9 +70,11 @@ class Assets {
 	/**
 	 * Display CSS tags
 	 * @param  array  $files
+	 * @param  array  $attributes
+	 * @param  bool   $echo
 	 * @return string
 	 */
-	public static function css($files = null, $attributes = null)
+	public static function css($files = null, $attributes = null, $echo = true)
 	{
 		self::init();
 
@@ -91,7 +93,7 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::css()_end");
 
 		// Tags
-		return self::_generate_tags('css');
+		return self::_generate_tags('css', $echo);
 	}
 
 	
@@ -101,9 +103,11 @@ class Assets {
 	 * Display a group of CSS tags
 	 * @param  string $group
 	 * @param  array  $files
+	 * @param  array  $attributes
+	 * @param  bool   $echo
 	 * @return string
 	 */
-	public static function css_group($group = null, $files = null, $attributes = null)
+	public static function css_group($group = null, $files = null, $attributes = null, $echo = true)
 	{
 		self::$group = $group;
 
@@ -123,7 +127,7 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::css_group(".$group.")_end");
 
 		// Tags
-		return self::_generate_tags('css');
+		return self::_generate_tags('css', $echo);
 	}
 
 	
@@ -132,9 +136,10 @@ class Assets {
 	/**
 	 * Display JS tags
 	 * @param  array  $files
+	 * @param  bool   $echo
 	 * @return string
 	 */
-	public static function js($files = null)
+	public static function js($files = null, $echo = true)
 	{
 		self::$group = null;
 
@@ -154,7 +159,7 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::js()_end");
 
 		// Tags
-		return self::_generate_tags('js');
+		return self::_generate_tags('js', $echo);
 	}
 
 	
@@ -164,9 +169,10 @@ class Assets {
 	 * Display a group of JS tags
 	 * @param  string $group
 	 * @param  array  $files
+	 * @param  bool   $echo
 	 * @return string
 	 */
-	public static function js_group($group = null, $files = null)
+	public static function js_group($group = null, $files = null, $echo = true)
 	{
 		self::$group = $group;
 
@@ -186,7 +192,7 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::js_group(".$group.")_end");
 
 		// Tags
-		return self::_generate_tags('js');
+		return self::_generate_tags('js', $echo);
 	}
 
 	

@@ -10,27 +10,27 @@
  */
 
 
-function assets_css($assets = null, $attributes = null)
+function assets_css($assets = null, $attributes = null, $echo = true)
 {
-	Assets::css($assets, $attributes);
+	Assets::css($assets, $attributes, $echo);
 }
 
 
-function assets_css_group($group = null, $assets = null, $attributes = null)
+function assets_css_group($group = null, $assets = null, $attributes = null, $echo = true)
 {
-	Assets::css_group($group, $assets, $attributes);
+	Assets::css_group($group, $assets, $attributes, $echo);
 }
 
 
-function assets_js($assets = null)
+function assets_js($assets = null, $echo = true)
 {
-	Assets::js($assets);
+	Assets::js($assets, $echo);
 }
 
 
-function assets_js_group($group = null, $assets = null)
+function assets_js_group($group = null, $assets = null, $echo = true)
 {
-	Assets::js_group($group, $assets);
+	Assets::js_group($group, $assets, $echo);
 }
 
 
@@ -46,9 +46,9 @@ function assets_img($path = null, $tag = false, $properties = null)
 }
 
 
-function assets_cdn($assets = null)
+function assets_cdn($assets = null, $echo = true)
 {
-	Assets::cdn($assets);
+	Assets::cdn($assets, $echo);
 }
 
 
