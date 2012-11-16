@@ -46,3 +46,5 @@ $config['assets']['css_dir']    = 'css';
 $config['assets']['cache_dir']  = 'cache';
 $config['assets']['img_dir']    = 'img';
 $config['assets']['html5']      = true;
+
+@include('local.assets.php'); // Load local settings
