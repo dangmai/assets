@@ -47,4 +47,7 @@ $config['assets']['cache_dir']  = 'cache';
 $config['assets']['img_dir']    = 'img';
 $config['assets']['html5']      = true;
 
-@include('local.assets.php'); // Load local settings
+if(file_exists(APPPATH.'config/assets.php')){
+    // Include custom config file
+    include(APPPATH.'config/assets.php');
+}
